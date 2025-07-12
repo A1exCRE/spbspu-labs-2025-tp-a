@@ -17,11 +17,6 @@ namespace karnauhova
     unsigned long long& ref;
   };
 
-  struct DelimiterIO
-  {
-    char exp;
-  };
-
   struct DoubleIO
   {
     double& ref;
@@ -48,7 +43,6 @@ namespace karnauhova
   std::ostream& operator<<(std::ostream& out, const DoubleIO&& dest);
   std::istream& operator>>(std::istream& in, UllIO&& dest);
   std::ostream& operator<<(std::ostream& out, const UllIO&& dest);
-  std::istream& operator>>(std::istream& in, DelimiterIO&& dest);
   std::istream& operator>>(std::istream& in, StringIO&& dest);
   std::istream& operator>>(std::istream& in, LabelIO& dest);
   bool compare(const DataStruct& l, const DataStruct& r);

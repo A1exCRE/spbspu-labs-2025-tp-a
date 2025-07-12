@@ -1,8 +1,7 @@
 #include <iostream>
 #include <iomanip>
-#include <algorithm>
 #include <stdexcept>
-#include "parser.hpp"
+#include <parser.hpp>
 #include "processors.hpp"
 
 int main(int argc, char** argv)

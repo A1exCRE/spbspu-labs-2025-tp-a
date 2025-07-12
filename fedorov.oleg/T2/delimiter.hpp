@@ -1,21 +1,14 @@
-#ifndef DELIMITER_HPP
-#define DELIMITER_HPP
+#ifndef DELIMITER
+#define DELIMITER
 
 #include <iostream>
 
 namespace fedorov
 {
-  struct DelimiterI
-  {
-    char expected;
-  };
-
   struct DelimiterStr
   {
-    const char *expected;
+    const char *exp;
   };
-
-  std::istream &operator>>(std::istream &in, DelimiterI &&exp);
   std::istream &operator>>(std::istream &in, DelimiterStr &&exp);
 }
 

@@ -2,9 +2,9 @@
 
 #include <iomanip>
 
-#include "delimiter.hpp"
+#include <input_delimiter.hpp>
+#include <format_guard.hpp>
 #include "input_parsers.hpp"
-#include "format_guard.hpp"
 
 std::ostream &fedorov::operator<<(std::ostream &out, const DataStruct &value)
 {
@@ -14,7 +14,7 @@ std::ostream &fedorov::operator<<(std::ostream &out, const DataStruct &value)
     return out;
   }
 
-  IOFormatGuard fmt_guard(out);
+  FormatGuard fmt_guard(out);
   out << std::setprecision(1) << std::fixed;
   out << "(:key1 " << value.key1 << "d";
   out << ":key2 #c(" << value.key2.real() << " " << value.key2.imag() << "):";
@@ -46,7 +46,7 @@ std::istream &fedorov::operator>>(std::istream &in, DataStruct &value)
     return in;
   }
 
-  using del = DelimiterI;
+  using del = DelimiterInput;
   bool hasKey1 = false;
   bool hasKey2 = false;
   bool hasKey3 = false;

@@ -14,16 +14,6 @@ namespace brevnov
     std::string key3;
   };
 
-  struct DelimiterIO
-  {
-    char exp;
-  };
-
-  struct DelimitersIO
-  {
-    std::string& exp;
-  };
-
   struct UnLongLongIO
   {
     unsigned long long & ref;
@@ -45,22 +35,7 @@ namespace brevnov
     std::array< int, 3 > keys;
   };
 
-  struct StreamGuard
-  {
-  public:
-    explicit StreamGuard(std::basic_ios< char > & s);
-    ~StreamGuard();
-  private:
-    std::basic_ios< char > & s_;
-    std::streamsize width_;
-    char fill_;
-    std::streamsize precision_;
-    std::basic_ios< char >::fmtflags fmt_;
-  };
-
   bool compare(const DataStruct& lhs, const DataStruct& rhs);
-  std::istream& operator>>(std::istream& in, DelimiterIO&& dest);
-  std::istream& operator>>(std::istream& in, DelimitersIO&& dest);
   std::istream& operator>>(std::istream& in, ComplexIO&& dest);
   std::istream& operator>>(std::istream& in, UnLongLongIO&& dest);
   std::istream& operator>>(std::istream& in, StringIO&& dest);
