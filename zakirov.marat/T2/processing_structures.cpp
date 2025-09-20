@@ -1,7 +1,7 @@
 #include "processing_structures.hpp"
 #include <iostream>
 #include <stack>
-#include "stream_guardian.hpp"
+#include <stream_guardian.hpp>
 
 bool zakirov::Data::operator<(const Data & other)
 {
